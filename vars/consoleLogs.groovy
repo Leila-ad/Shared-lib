@@ -4,9 +4,9 @@ def call(Map config = [:]) {
   TIMESTAMP     = "21.12.2023"
 
   script {
-    echo """
-      Timestamp: [${TIMESTAMP}]
-      git short hash: [${GITSHORTHASH}]
+    return """
+      TIMESTAMP: [${TIMESTAMP}]
+      GIT SHORT HASH: [${GITSHORTHASH}]
     """
   }
 }
