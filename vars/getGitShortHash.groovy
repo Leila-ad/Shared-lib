@@ -1,3 +1,3 @@
 def call() {
-    println "1234"
+    return "1234"
 }
