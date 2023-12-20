@@ -5,8 +5,8 @@ def call(Map config = [:]) {
 
   script {
     echo """
-      "Timestamp: [${TIMESTAMP}]"
-      "git short hash: [${GITSHORTHASH}]"
+      Timestamp: [${TIMESTAMP}]
+      git short hash: [${GITSHORTHASH}]
     """
   }
 }
