@@ -1,3 +1,3 @@
 def call() {
-    printf "1234"
+    println "1234"
 }
