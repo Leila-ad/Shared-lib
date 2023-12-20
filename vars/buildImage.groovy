@@ -4,4 +4,5 @@ def call(Map config = [:]){
     }
 
     println "${BUILD_VERSION} and the ${CONTAINER_FILE_PATH}"
+    println "${IMAGE_REPO} and the ${PROJECT}"
 }
