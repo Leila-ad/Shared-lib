@@ -1,6 +1,8 @@
+evaluate(new File("../getGitShortHash.groovy"))
+
 def call(Map config = [:]) {
 
-  GITSHORTHASH  = "324565423"
+  GITSHORTHASH  = getGitShortHash()
   TIMESTAMP     = "21.12.2023"
 
   script {
