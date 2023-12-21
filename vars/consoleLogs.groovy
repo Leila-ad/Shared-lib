@@ -1,5 +1,3 @@
-evaluate(new File("../getGitShortHash.groovy"))
-
 def call(Map config = [:]) {
 
   GITSHORTHASH  = getGitShortHash()
