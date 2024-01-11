@@ -17,7 +17,7 @@ pipeline {
                 echo "${getGitShortHash()}"
                 echo "${env.BUILD_NUMBER} and the ${env.TAG_NAME}"
                 echo "${getSemanticVersion()}"
-                buildImage()
+                buildImage(containerFilePath: config.containerFilePath)
             }
         }
         stage ("String interpolation") {
