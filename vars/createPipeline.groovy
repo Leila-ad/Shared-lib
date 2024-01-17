@@ -1,4 +1,4 @@
-def call(Closure passEnv = {}, Map config = [:]) {
+def call(Map config = [:], Map customEnv = [:], Closure customStages = {}) {
     def buildNumber = env.BUILD_NUMBER as int
     if (buildNumber > 1) milestone(buildNumber - 1)
     milestone(buildNumber)
@@ -6,7 +6,9 @@ def call(Closure passEnv = {}, Map config = [:]) {
 pipeline {
     agent any
     
-    passEnv()
+    environment {
+        CLOSURE_VAR = "Closure varibale"
+    }
     
     stages {    
 
@@ -20,11 +22,7 @@ pipeline {
         }
         stage ("String interpolation") {
             steps {
-                echo "$env.Variable"
-                echo "$env.Var"
-                echo "$Var"
-                echo "env.Variable"
-                echo "env.Var"
+                echo "$env.VAR"
             }
         }
         stage ("Uebergeben von Variablen in shell") {
