@@ -1,4 +1,4 @@
-def call(Map config = [:]) {
+def call(Closure passEnv = {}, Map config = [:]) {
     def buildNumber = env.BUILD_NUMBER as int
     if (buildNumber > 1) milestone(buildNumber - 1)
     milestone(buildNumber)
@@ -6,11 +6,9 @@ def call(Map config = [:]) {
 pipeline {
     agent any
     
-    environment {
-        VAR = "The variable"
-    }
+    passEnv()
     
-    stages {
+    stages {    
 
         stage ('Configuration') {
             steps {
