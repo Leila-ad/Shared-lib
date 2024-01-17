@@ -1,7 +1,4 @@
 def call(Map config = [:]) {
-    def pipelineConfig = [
-        containerFilePath: config.containerFilePath
-    ]
     def buildNumber = env.BUILD_NUMBER as int
     if (buildNumber > 1) milestone(buildNumber - 1)
     milestone(buildNumber)
@@ -20,7 +17,7 @@ pipeline {
                 echo "${getGitShortHash()}"
                 echo "${env.BUILD_NUMBER} and the ${env.TAG_NAME}"
                 echo "${getSemanticVersion()}"
-                buildImage(pipelineConfig)
+                buildImage(config)
             }
         }
         stage ("String interpolation") {

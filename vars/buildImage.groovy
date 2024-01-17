@@ -1,6 +1,6 @@
-def call(Map pipelineConfig = [:]){
-    env.CONTAINER_FILE_PATH = pipelineConfig.containerFilePath ?: 'Containerfile'
+def call(Map config = [:]){
+    env.CONTAINER_FILE_PATH = config.containerFilePath ?: 'Containerfile'
 
     println "${CONTAINER_FILE_PATH}"
-    println "${pipelineConfig.containerFilePath}"
+    println "${config.containerFilePath}"
 }
