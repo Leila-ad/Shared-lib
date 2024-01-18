@@ -11,8 +11,8 @@ pipeline {
     }
     
     stages {    
-        script {
-            stage ('Configuration') {
+
+        stage ('Configuration') {
             steps {
                 echo "${getGitShortHash()}"
                 echo "${env.BUILD_NUMBER} and the ${env.TAG_NAME}"
@@ -30,9 +30,12 @@ pipeline {
                 echo '$env.Variable'
             }
         }
+        for(int i = 0; i < 4; i++) {
+            stage("test ${i}"){
+                echo "${i}"
+            }
+        }
 
-        customStages()
-        } 
     }
 }
 }
