@@ -1,4 +1,4 @@
-def call(Map config = [:], Closure extraLog = {}) {
+def call(Map config = [:]) {
 
   GITSHORTHASH  = getGitShortHash()
   TIMESTAMP     = "21.12.2023"
@@ -7,7 +7,11 @@ def call(Map config = [:], Closure extraLog = {}) {
     echo """
       TIMESTAMP: [${TIMESTAMP}]
       GIT SHORT HASH: [${GITSHORTHASH}]
-      ${extraLog.key}:[${extraLog.value}]
     """
+    config.each{key, value -> 
+    echo """
+      $key: [$value]
+    """
+    }
   }
 }
