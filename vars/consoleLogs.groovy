@@ -4,7 +4,7 @@ def call(Map config = [:]) {
   TIMESTAMP     = "21.12.2023"
   
   Map test = [
-    GIT_SHORT_HASH : [$GITSHORTHASH]
+    GIT_SHORT_HASH : [$GITSHORTHASH],
     TIMESTAMP      : [$TIMESTAMP]
   ]
 
