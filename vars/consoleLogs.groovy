@@ -10,6 +10,7 @@ def call(Map config = [:]) {
     echo """
       TIMESTAMP: [${TIMESTAMP}]
       GIT SHORT HASH: [${GITSHORTHASH}]
+      ${arr}
       for a in arr; do
         a
       done
