@@ -3,12 +3,14 @@ def call(Map config = [:]) {
   GITSHORTHASH  = getGitShortHash()
   TIMESTAMP     = "21.12.2023"
 
+  Map test = [
+    GITSHORTHASH: $GITSHORTHASH,
+    TIMESTAM: $TIMESTAMP,
+    *:config
+  ]
   script {
     echo """
-    GIT_SHORT_HASH : [${GITSHORTHASH}]
-    TIMESTAMP      : [${TIMESTAMP}]
-    ${config.collect({key, value -> "$key: [$value]\n"})}
-    ${config.split({entry -> entry})}
+    test.collect({key, value -> "$key: [$value]"})
     """
   }
 }
