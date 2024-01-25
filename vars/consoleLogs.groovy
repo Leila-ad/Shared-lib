@@ -8,7 +8,8 @@ def call(Map config = [:]) {
     TIMESTAMP: TIMESTAMP,
     *:config
   ]
-  script 
-     echo "${echo test.collect({key, value -> "$key: [$value]\n"}) | tr "[,]" ""}" 
+  script {
+     echo "echo ${test.collect({key, value -> "$key: [$value]\n"}) }| tr '[,]' ''" 
+  }
   
 }
