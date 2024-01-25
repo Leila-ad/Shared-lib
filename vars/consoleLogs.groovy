@@ -5,7 +5,7 @@ def call(Map config = [:]) {
 
   Map test = [
     GITSHORTHASH: GITSHORTHASH,
-    TIMESTAM: TIMESTAMP,
+    TIMESTAMP: TIMESTAMP,
     *:config
   ]
   script {
