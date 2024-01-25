@@ -11,9 +11,6 @@ def call(Map config = [:]) {
       TIMESTAMP: [${TIMESTAMP}]
       GIT SHORT HASH: [${GITSHORTHASH}]
       ${arr}
-      ${for a in arr; do
-        a
-      done}
       ${config.each{key, value -> 
       "$key: [$value]"
       }}
