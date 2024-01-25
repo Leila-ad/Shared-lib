@@ -11,12 +11,8 @@ def call(Map config = [:]) {
       TIMESTAMP: [${TIMESTAMP}]
       GIT SHORT HASH: [${GITSHORTHASH}]
       ${arr}
-      ${config.each{key, value -> 
-      "$key: [$value]"
-      }}
-      $(config.each{key, value -> 
-      "$key: [$value]"
-      })
+      ${config.each{key, value -> "$key: [$value]"}}
+      $(config.each{key, value -> "$key: [$value]"})
     """
   }
 }
