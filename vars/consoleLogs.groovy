@@ -9,7 +9,7 @@ def call(Map config = [:]) {
   }
   script {
     echo """
-      ${for a in arr; do
+      ${for a in ${arr.join(' ')}; do
         $a
       done
       }
