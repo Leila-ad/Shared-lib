@@ -4,9 +4,11 @@ def call(Map config = [:]) {
   TIMESTAMP     = "21.12.2023"
 
   Closure extraLogs = {
+    echo """
     config.each{key, value ->
       "$key: [$value] \n"
     }
+    """
   }
 
   script {
