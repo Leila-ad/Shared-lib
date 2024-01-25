@@ -9,7 +9,7 @@ def call(Map config = [:]) {
     *:config
   ]
   script {
-    echo "${echo test.collect({key, value -> "$key: [$value]\n"}) | tr '[,]' ''}"
+    echo "${test.collect({key, value -> "$key: [$value]"}).join("\n")}"
   }
   
 }
