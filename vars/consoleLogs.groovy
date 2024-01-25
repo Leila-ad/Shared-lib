@@ -9,8 +9,6 @@ def call(Map config = [:]) {
     *:config
   ]
   script {
-    echo """
-    test.collect({key, value -> "$key: [$value]"})
-    """
+    echo "${test.collect({key, value -> "$key: [$value]"})}"
   }
 }
