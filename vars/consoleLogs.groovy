@@ -4,7 +4,7 @@ def call(Map config = [:]) {
   TIMESTAMP     = "21.12.2023"
   Closure extraLog = {
     return config.each{key, value -> 
-      $key: [$value]
+      "$key: [$value]"
       }}
   script {
     echo """
