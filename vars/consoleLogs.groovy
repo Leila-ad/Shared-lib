@@ -7,7 +7,7 @@ def call(Map config = [:]) {
     echo """
     GIT_SHORT_HASH : [${GITSHORTHASH}]
     TIMESTAMP      : [${TIMESTAMP}]
-    ${config.asUnmodifiable()}
+    ${config.collect({key, value -> "$key: [$value] \n"})}
     """
   }
 }
