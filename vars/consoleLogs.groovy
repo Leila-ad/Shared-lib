@@ -3,19 +3,16 @@ def call(Map config = [:]) {
   GITSHORTHASH  = getGitShortHash()
   TIMESTAMP     = "21.12.2023"
 
-  Closure extraLogs = {
-    def keyVal
-    config.each{key, value ->
-      keyVal = "$key: [$value] \n"
-    }
-    return keyVal
-  }
-
   script {
+    def arr = config.each{key, value -> 
+      "$key: [$value]"
+    }
     echo """
       TIMESTAMP: [${TIMESTAMP}]
       GIT SHORT HASH: [${GITSHORTHASH}]
-      ${extraLogs()}
+      for a in arr; do
+        a
+      done
     """
   }
 }
