@@ -4,8 +4,8 @@ def call(Map config = [:]) {
   TIMESTAMP     = "21.12.2023"
 
   Map test = [
-    GITSHORTHASH: $GITSHORTHASH,
-    TIMESTAM: $TIMESTAMP,
+    GITSHORTHASH: GITSHORTHASH,
+    TIMESTAM: TIMESTAMP,
     *:config
   ]
   script {
