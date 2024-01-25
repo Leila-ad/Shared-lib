@@ -7,12 +7,10 @@ def call(Map config = [:]) {
   config.each{key, value ->
     arr.append("$key: [$value]")
   }
-  script {
-    echo """
-      ${for a in ${arr.join(' ')}; do
-        $a
-      done
-      }
-    """
-  }
+  
+  sh """
+    for a in arr; do
+        echo "$a"
+    done
+  """
 }
